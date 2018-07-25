@@ -4,10 +4,10 @@ LABEL maintainer="ishar@alterra.id"
 
 # Let the container know that there is no tty
 ENV DEBIAN_FRONTEND noninteractive
-ENV NGINX_VERSION 1.19.5-1~buster
-ENV php_conf /etc/php/8.0/fpm/php.ini
-ENV fpm_conf /etc/php/8.0/fpm/pool.d/www.conf
-ENV COMPOSER_VERSION 2.0.8
+ENV NGINX_VERSION 1.15.2-1~stretch
+ENV php_conf /etc/php/7.2/fpm/php.ini
+ENV fpm_conf /etc/php/7.2/fpm/pool.d/www.conf
+ENV COMPOSER_VERSION 1.6.5
 
 # Install Basic Requirements
 RUN buildDeps='curl gcc make autoconf libc-dev zlib1g-dev pkg-config' \
