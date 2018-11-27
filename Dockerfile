@@ -4,10 +4,10 @@ LABEL maintainer="ishar@alterra.id"
 
 # Let the container know that there is no tty
 ENV DEBIAN_FRONTEND noninteractive
-ENV NGINX_VERSION 1.15.5-1~stretch
+ENV NGINX_VERSION 1.15.6-1~stretch
 ENV php_conf /etc/php/7.2/fpm/php.ini
 ENV fpm_conf /etc/php/7.2/fpm/pool.d/www.conf
-ENV COMPOSER_VERSION 1.7.2
+ENV COMPOSER_VERSION 1.7.3
 
 # Install Basic Requirements
 RUN buildDeps='curl gcc make autoconf libc-dev zlib1g-dev pkg-config' \
@@ -43,24 +43,25 @@ RUN buildDeps='curl gcc make autoconf libc-dev zlib1g-dev pkg-config' \
             libmemcached11 \
             libmagickwand-dev \
             nginx=${NGINX_VERSION} \
-            php8.0-fpm \
-            php8.0-cli \
-            php8.0-bcmath \
-            php8.0-dev \
-            php8.0-common \
-            php8.0-opcache \
-            php8.0-readline \
-            php8.0-mbstring \
-            php8.0-curl \
-            php8.0-gd \
-            php8.0-imagick \
-            php8.0-mysql \
-            php8.0-zip \
-            php8.0-pgsql \
-            php8.0-intl \
-            php8.0-xml \
-            php-pear \
-    && pecl -d php_suffix=8.0 install -o -f redis memcached \
+            php7.2-fpm \
+            php7.2-cli \
+            php7.2-bcmath \
+            php7.2-dev \
+            php7.2-common \
+            php7.2-json \
+            php7.2-opcache \
+            php7.2-readline \
+            php7.2-mbstring \
+            php7.2-curl \
+            php7.2-memcached \
+            php7.2-imagick \
+            php7.2-gd \
+            php7.2-mysql \
+            php7.2-zip \
+            php7.2-pgsql \
+            php7.2-intl \
+            php7.2-xml \
+            php7.2-redis \
     && mkdir -p /run/php \
     && pip install wheel \
     && pip install supervisor supervisor-stdout \
