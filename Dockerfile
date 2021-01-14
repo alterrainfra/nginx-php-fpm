@@ -114,6 +114,6 @@ COPY /custom/. /etc/nginx/custom/
 # Add Scripts
 ADD ./start.sh /start.sh
 
-EXPOSE 80
+EXPOSE 3030
 
 CMD ["/start.sh"]
