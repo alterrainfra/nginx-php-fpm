@@ -107,6 +107,7 @@ ADD ./supervisord.conf /etc/supervisord.conf
 
 # Override nginx's default config
 ADD ./default.conf /etc/nginx/conf.d/default.conf
+ADD ./nginx.conf /etc/nginx/nginx.conf
 
 RUN mkdir -p /etc/nginx/custom/
 COPY /custom/. /etc/nginx/custom/
